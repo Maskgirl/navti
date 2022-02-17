@@ -1,0 +1,93 @@
+version: "2.0"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+      - yo
+
+  # - regex: pincode_detail_category_type
+  #   examples: |
+  #     - \d
+  #     - \d.
+  #     - /state/i
+  #     - /city/i
+  #     - /district/i
+
+  # - regex: pincode
+  #   examples: |
+  #     - \d{6}
+
+  - intent: request_pincode_details
+    examples: |
+      - know my location
+      - my location
+      - where i am located
+      - my current location
+      - [state](pincode_detail_category_type) of [140103](pincode)
+      - [district](pincode_detail_category_type) of [140102](pincode)
+      - i want to know [district](pincode_detail_category_type) of [140102](pincode)
+      - tell me the [city](pincode_detail_category_type) of [700074](pincode)
+      - tell me [district](pincode_detail_category_type) of [140103](pincode)
+      - tell the [city](pincode_detail_category_type) of [140102](pincode)
+      - tell [state](pincode_detail_category_type) of [700074](pincode)
+      - do you know about [700074](pincode)
+      - what else you know about [700074](pincode)
+      - tell me more about [700074](pincode)
+      - i want more info about [700074](pincode)
+      - i want to know [state](pincode_detail_category_type)
+
+  # - lookup: pincode
+  #   examples: |
+  #     - 140103
+
+  - intent: thank_you
+    examples: |
+      - you helped a lot thank you
+      - appreciate your help
+      - cheers
+      - thank you
+      - thanks
+      - thanks a lot
+      - terrific thank you
+      - great thank you
+      - thanks so much
+      - thank you so much
+      - thanks for your help
+      - thank you for your help
+      - nice thank you
+      - I appreciate it
+      - I thank you
+      - thank you that will be all
+      - thanks buddy
+      - thanks love
+      - thank you my friend
+      - well thanks
+      - very good thank you
+      - good thanks
+      - thanks again
+      - thank you again
+      - all thank you
+      - alright thank you
+      - alright thanks
+      - no thank you that's all
+      - perfect thank you
+      - so nice of you
+      - well thank you
+      - well thanks
+      - thnx
+      - thank you
+      - tqsm
+      - ty

@@ -1,0 +1,23 @@
+version: "2.0"
+
+rules:
+  - rule: thank you
+    steps:
+      - intent: thank_you
+      - action: utter_welcome
+
+  - rule: Activate pincode form
+    steps:
+      - intent: request_pincode_details
+      - action: action_extract_entities_to_slots
+      - action: pincode_detail_form
+      - active_loop: pincode_form
+
+  - rule: Submit form
+    condition:
+      - active_loop: pincode_form
+    steps:
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: utter_picode_detail_from_result

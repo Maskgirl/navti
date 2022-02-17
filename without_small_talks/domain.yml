@@ -1,0 +1,57 @@
+version: "2.0"
+
+config:
+  store_entities_as_slots: false
+
+intents:
+  - greet
+  - request_pincode_details
+  - request_pincode_detail_category_type
+  - request_pincode
+  - know_more_about_pincode
+  - thank_you
+
+entities:
+  - pincode_detail_category_type
+  - pincode
+
+actions:
+  - action_show_pincode_detail_form_result
+  - validate_pincode_detail_form
+  - pincode_form
+  - action_extract_entities_to_slots
+
+slots:
+  pincode_detail_category_type:
+    type: text
+    influence_conversation: false
+  pincode:
+    type: text
+    influence_conversation: false
+
+forms:
+  pincode_detail_form:
+    pincode_detail_category_type:
+      type: from_text
+    pincode:
+      type: from_text
+
+responses:
+  utter_greet:
+    - text: "Hello"
+
+  utter_ask_pincode_detail_category_type:
+    - text: "What do you want to know? 1. State 2. City 3. District"
+
+  utter_ask_pincode:
+    - text: "Please share the pincode"
+
+  utter_picode_detail_from_result:
+    - text: "Your {pincode_detail_category_type} is {pincode_detail_form_result}"
+
+  utter_welcome:
+    - text: "Welcome"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
